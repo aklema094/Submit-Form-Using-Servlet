@@ -8,7 +8,8 @@
     <body>
         <div class="container">
     <h3>Course Registration Form</h3>
-    <table>
+    <form action="register" method="post">
+        <table>
         <tr>
             <td>Enter your name : </td>
             <td><input type="text" name = "user_name" placeholder="Enter here"></td>
@@ -30,14 +31,14 @@
             <td>
             <select name="user_course" id="course">
                 <option value="java"> Java</option>
-                <option value="phython"> Phyton</option>
+                <option value="python"> Python</option>
                 <option value="c++"> C++</option>
                 <option value="go"> Go</option>
             </select>
             </td>
         </tr>
         <tr>
-            <td style="text-align: right;"><input type="checkbox" value="checkbox"></td>
+            <td style="text-align: right;"><input type="checkbox" value="checkbox" name="condition"></td>
             <td>Agree terms and conditions</td>
         </tr>
         <tr>
@@ -48,6 +49,7 @@
             </td>
         </tr>
     </table>
+    </form>
  </div>
 
     </body>
