@@ -9,10 +9,20 @@
         <servlet-name> submit </servlet-name>
         <servlet-class> com.servlets.MyServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name> sucess </servlet-name>
+        <servlet-class> com.servlets.Suucess</servlet-class>
+    </servlet>
     
      <servlet-mapping>
           <servlet-name> submit </servlet-name>
           <url-pattern>/register</url-pattern>
+          
+    </servlet-mapping>
+    
+     <servlet-mapping>
+          <servlet-name> sucess </servlet-name>
+          <url-pattern>/sucess</url-pattern>
           
     </servlet-mapping>
 </web-app>

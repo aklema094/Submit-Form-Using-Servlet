@@ -1,6 +1,7 @@
 
 package com.servlets;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -11,10 +12,10 @@ import java.io.PrintWriter;
 
 public class MyServlet extends HttpServlet{
     
-    public void doPost(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException{
+    public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException{
         
-    response.setContentType("text/html");
-    PrintWriter out = response.getWriter();
+    res.setContentType("text/html");
+    PrintWriter out = res.getWriter();
     out.println("<h4>Welcome to servelet</h4>");
     
     String name = req.getParameter("user_name");
@@ -31,8 +32,13 @@ public class MyServlet extends HttpServlet{
         out.println("<h5> email : "+email);
         out.println("<h5> gender : "+gender);
         out.println("<h5> course : "+course);
+        
+        RequestDispatcher rd = req.getRequestDispatcher("sucess");
+        rd.forward(req, res);
     }else{
         out.println("<h5> You didn't accepts terms and conditions!! try again </h5>");
+        RequestDispatcher rd = req.getRequestDispatcher("index.html");
+        rd.include(req, res);
     }
     
     
